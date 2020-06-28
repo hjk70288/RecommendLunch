@@ -1,0 +1,63 @@
+<?xml version="1.1" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.recommendlunch">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/icon"
+        android:label="오늘은 뭐먹지"
+        android:roundIcon="@mipmap/icon"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".DonDonJung"></activity>
+        <activity android:name=".chose.IsAuthentic"/>
+        <activity android:name=".chose.IsBowlOfRice"/>
+        <activity android:name=".chose.IsClose" />
+        <activity android:name=".chose.IsCold" />
+        <activity android:name=".chose.IsDiffrentFood"/>
+        <activity android:name=".chose.IsExpensive"/>
+        <activity android:name=".chose.IsHamburger"/>
+        <activity android:name=".chose.IsHomefood"/>
+        <activity android:name=".chose.IsNoodle"/>
+        <activity android:name=".chose.IsSeafood"/>
+        <activity android:name=".chose.IsSimplefood"/>
+        <activity android:name=".chose.IsSoup"/>
+        <activity android:name=".chose.IsSpicy"/>
+        <activity android:name=".chose.IsSushi"/>
+        <activity android:name=".GoKan" />
+        <activity android:name=".ChoiNoMi" />
+        <activity android:name=".Ramen" />
+        <activity android:name=".Pizza" />
+        <activity android:name=".Zzambbong" />
+        <activity android:name=".Subway" />
+        <activity android:name=".BurgerKing" />
+        <activity android:name=".TosPia" />
+        <activity android:name=".MomsTouch" />
+        <activity android:name=".SheapRoast" />
+        <activity android:name=".Maratang" />
+        <activity android:name=".Baizing" />
+        <activity android:name=".HeaRaeDeung" />
+        <activity android:name=".Hansott" />
+        <activity android:name=".FishRoast" />
+        <activity android:name=".DonDay" />
+        <activity android:name=".Aguggim" >
+
+        </activity>
+        <activity android:name=".RiceSoup" />
+        <activity android:name=".KnifeNoodle">
+        </activity>
+        <activity android:name=".IceNoodle" />
+        <activity android:name=".BaeBuJang" />
+        <activity android:name=".PotatoSoup">
+
+        </activity>
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
