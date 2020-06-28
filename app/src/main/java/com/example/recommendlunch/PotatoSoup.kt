@@ -8,6 +8,8 @@ import android.view.View
 import kotlinx.android.synthetic.main.activity_potato_soup.*
 import org.jetbrains.anko.browse
 import org.jetbrains.anko.makeCall
+import org.jetbrains.anko.toast
+import java.lang.Exception
 
 class PotatoSoup : AppCompatActivity() {
 
@@ -31,6 +33,17 @@ class PotatoSoup : AppCompatActivity() {
 
         potatoLocation.setOnClickListener {
             browse("https://map.naver.com/v5/directions/-/14108308.768699218,4487051.198687945,%EB%9D%BC%EB%9D%BC%EA%B0%90%EC%9E%90%ED%83%95%EB%B3%B8%EC%A0%90,32085009,PLACE_POI/-/car?c=14108292.8360224,4486957.4669252,15,0,0,0,dh")
+        }
+        bmPotato.setOnClickListener {
+            try {
+                val intent = packageManager.getLaunchIntentForPackage("com.sampleapp")
+                intent!!.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                startActivity(intent)
+            }
+            catch (e: Exception)
+            {
+                toast("어플이 설치되지 않았습니다")
+            }
         }
     }
 }

@@ -8,6 +8,8 @@ import android.view.View
 import kotlinx.android.synthetic.main.activity_potato_soup.*
 import kotlinx.android.synthetic.main.activity_ramen.*
 import org.jetbrains.anko.browse
+import org.jetbrains.anko.toast
+import java.lang.Exception
 
 class Ramen : AppCompatActivity() {
 
@@ -32,6 +34,17 @@ class Ramen : AppCompatActivity() {
         ramenLocation.setOnClickListener {
             browse("https://map.naver.com/v5/directions/-/14108256.476995584,4487209.51267009,%EC%9D%B4%EC%B0%8C%EB%B0%A9%20%EC%A0%95%EC%99%95%EC%A0%90,141503623,PLACE_POI/-/car?c=14109327.7984499,4487906.3314480,15,0,0,0,dh")
 
+        }
+        bmRamen.setOnClickListener {
+            try {
+                val intent = packageManager.getLaunchIntentForPackage("com.sampleapp")
+                intent!!.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                startActivity(intent)
+            }
+            catch (e: Exception)
+            {
+                toast("어플이 설치되지 않았습니다")
+            }
         }
     }
 }

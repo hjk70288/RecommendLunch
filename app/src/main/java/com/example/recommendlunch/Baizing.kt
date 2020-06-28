@@ -8,6 +8,8 @@ import android.view.View
 import kotlinx.android.synthetic.main.activity_baizing.*
 import kotlinx.android.synthetic.main.activity_potato_soup.*
 import org.jetbrains.anko.browse
+import org.jetbrains.anko.toast
+import java.lang.Exception
 
 class Baizing : AppCompatActivity() {
 
@@ -32,6 +34,17 @@ class Baizing : AppCompatActivity() {
         baizingLocation.setOnClickListener {
             browse("https://map.naver.com/v5/directions/-/14108053.546502676,4487047.01204256,%EB%8D%94%EB%B2%A0%EC%9D%B4%EC%A7%95,144877088,PLACE_POI/-/car?c=14109327.7984499,4487906.3314480,15,0,0,0,dh")
 
+        }
+        bmBazing.setOnClickListener {
+            try {
+                val intent = packageManager.getLaunchIntentForPackage("com.sampleapp")
+                intent!!.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                startActivity(intent)
+            }
+            catch (e: Exception)
+            {
+                toast("어플이 설치되지 않았습니다")
+            }
         }
     }
 }

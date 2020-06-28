@@ -1,15 +1,16 @@
 package com.example.recommendlunch
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.content.IntentSender
 import android.os.Bundle
-import android.view.Window
+import androidx.appcompat.app.AppCompatActivity
 import com.example.recommendlunch.chose.IsNoodle
 import com.example.recommendlunch.chose.IsSimplefood
 import com.example.recommendlunch.chose.IsSoup
-import com.example.recommendlunch.chose.IsSpicy
 import kotlinx.android.synthetic.main.activity_main.*
-import org.jetbrains.anko.browse
+import org.jetbrains.anko.toast
+import java.lang.Exception
+
 
 class MainActivity : AppCompatActivity() {
 

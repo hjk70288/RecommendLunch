@@ -8,6 +8,8 @@ import android.view.View
 import kotlinx.android.synthetic.main.activity_potato_soup.*
 import kotlinx.android.synthetic.main.activity_tos_pia.*
 import org.jetbrains.anko.browse
+import org.jetbrains.anko.toast
+import java.lang.Exception
 
 class TosPia : AppCompatActivity() {
 
@@ -32,6 +34,17 @@ class TosPia : AppCompatActivity() {
         tospiaLocation.setOnClickListener {
             browse("https://map.naver.com/v5/directions/-/14107909.36549823,4486609.747814125,%EA%B9%8C%ED%8E%98%ED%86%A0%EC%8A%A4%ED%94%BC%EC%95%84,,/-/transit?c=14107442.4740827,4486609.9173122,15,0,0,0,dh")
 
+        }
+        bmTospia.setOnClickListener {
+            try {
+                val intent = packageManager.getLaunchIntentForPackage("com.sampleapp")
+                intent!!.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                startActivity(intent)
+            }
+            catch (e: Exception)
+            {
+                toast("어플이 설치되지 않았습니다")
+            }
         }
     }
 }

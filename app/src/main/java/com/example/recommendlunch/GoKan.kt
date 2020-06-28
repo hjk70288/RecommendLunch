@@ -8,6 +8,8 @@ import android.view.View
 import kotlinx.android.synthetic.main.activity_go_kan.*
 import kotlinx.android.synthetic.main.activity_potato_soup.*
 import org.jetbrains.anko.browse
+import org.jetbrains.anko.toast
+import java.lang.Exception
 
 class GoKan : AppCompatActivity() {
 
@@ -32,6 +34,17 @@ class GoKan : AppCompatActivity() {
         gokanLocation.setOnClickListener {
             browse("https://map.naver.com/v5/directions/-/14108243.446422022,4487284.155225666,%EA%B3%A0%EC%B9%B8%20%EC%A0%95%EC%99%95%EC%A0%90,1407677177,PLACE_POI/-/car?c=14109327.7984499,4487906.3314480,15,0,0,0,dh")
 
+        }
+        bmGoKan.setOnClickListener {
+            try {
+                val intent = packageManager.getLaunchIntentForPackage("com.sampleapp")
+                intent!!.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                startActivity(intent)
+            }
+            catch (e: Exception)
+            {
+                toast("어플이 설치되지 않았습니다")
+            }
         }
     }
 }

@@ -8,6 +8,8 @@ import android.view.View
 import kotlinx.android.synthetic.main.activity_aguggim.*
 import kotlinx.android.synthetic.main.activity_potato_soup.*
 import org.jetbrains.anko.browse
+import org.jetbrains.anko.toast
+import java.lang.Exception
 
 class Aguggim : AppCompatActivity() {
 
@@ -32,6 +34,17 @@ class Aguggim : AppCompatActivity() {
         aguggimLocation.setOnClickListener {
             browse("https://map.naver.com/v5/directions/-/14108344.99206155,4487292.850764075,%EB%AA%85%EB%AC%BC%EC%AD%88%EA%BE%B8%EB%AF%B8%EC%95%84%EA%B5%AC%EC%B0%9C%20%EC%A0%95%EC%99%95%EB%B3%B8%EC%A0%90,,/-/transit?c=14107879.5983382,4487293.0732525,15,0,0,0,dh")
 
+        }
+        bmAgu.setOnClickListener {
+            try {
+                val intent = packageManager.getLaunchIntentForPackage("com.sampleapp")
+                intent!!.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                startActivity(intent)
+            }
+            catch (e: Exception)
+            {
+                toast("어플이 설치되지 않았습니다")
+            }
         }
     }
 }

@@ -8,6 +8,8 @@ import android.view.View
 import kotlinx.android.synthetic.main.activity_ice_noodle.*
 import kotlinx.android.synthetic.main.activity_potato_soup.*
 import org.jetbrains.anko.browse
+import org.jetbrains.anko.toast
+import java.lang.Exception
 
 class IceNoodle : AppCompatActivity() {
 
@@ -32,6 +34,17 @@ class IceNoodle : AppCompatActivity() {
         iceLocation.setOnClickListener {
             browse("https://map.naver.com/v5/directions/-/14108214.926368507,4487189.134883412,%EC%9C%A1%EC%8C%88%EB%83%89%EB%A9%B4%20%EC%8B%9C%ED%9D%A5%EC%A0%90,,/-/transit?c=14107748.2221958,4487187.9723386,15,0,0,0,dh")
 
+        }
+        bmIce.setOnClickListener {
+            try {
+                val intent = packageManager.getLaunchIntentForPackage("com.sampleapp")
+                intent!!.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                startActivity(intent)
+            }
+            catch (e: Exception)
+            {
+                toast("어플이 설치되지 않았습니다")
+            }
         }
     }
 }

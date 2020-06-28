@@ -152,8 +152,21 @@
                     android:background="#00FF00"
                     android:src="@drawable/ic_location_searching_black_24dp" />
             </LinearLayout>
-
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="30dp" />
+            <Button
+                android:id="@+id/bmSubway"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_event"
+                android:text="배달의 민족에서 주문하기"
+                android:layout_gravity="center"
+                android:textColor="#FFFFFF"/>
         </LinearLayout>
 
     </FrameLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
