@@ -36,12 +36,12 @@ class KnifeNoodle : AppCompatActivity() {
         bmKnife.setOnClickListener {
             try {
                 val intent = packageManager.getLaunchIntentForPackage("com.sampleapp")
-                intent!!.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                 startActivity(intent)
             }
             catch (e: Exception)
             {
                 toast("어플이 설치되지 않았습니다")
+                browse("market://details?id=" + "com.sampleapp")
             }
         }
     }

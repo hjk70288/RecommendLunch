@@ -2,14 +2,13 @@ package com.example.recommendlunch
 
 import android.content.Intent
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_aguggim.*
-import kotlinx.android.synthetic.main.activity_potato_soup.*
 import org.jetbrains.anko.browse
 import org.jetbrains.anko.toast
-import java.lang.Exception
+
 
 class Aguggim : AppCompatActivity() {
 
@@ -38,12 +37,12 @@ class Aguggim : AppCompatActivity() {
         bmAgu.setOnClickListener {
             try {
                 val intent = packageManager.getLaunchIntentForPackage("com.sampleapp")
-                intent!!.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                 startActivity(intent)
             }
             catch (e: Exception)
             {
                 toast("어플이 설치되지 않았습니다")
+                browse("market://details?id=" + "com.sampleapp")
             }
         }
     }
